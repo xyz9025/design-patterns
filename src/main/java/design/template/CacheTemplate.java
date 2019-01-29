@@ -19,4 +19,12 @@ public class CacheTemplate<K, V> {
     public void put(K key,V value) {
         dataMap.put(key, value);
     }
+
+    public <T extends Comparable<T>> int countGreaterThan(T[] anArray, T elem) {
+        int count = 0;
+        for (T e : anArray)
+            if (e.compareTo(elem) > 0)
+                ++count;
+        return count;
+    }
 }
