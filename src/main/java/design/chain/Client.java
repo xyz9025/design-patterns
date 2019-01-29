@@ -2,6 +2,7 @@ package design.chain;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
 public class Client {
 
     public static void main(String[] args) {
-        LeaveNode node = new LeaveNode("小明",20);
+        LeaveNode node = new LeaveNode("小明",5);
         Leader leader1 = new Instructor("张三",0);
         Leader leader2 = new DepartmentHead("李四",1);
         Leader leader3 = new Dean("王五",2);
@@ -20,7 +21,7 @@ public class Client {
         Leader leader5 = new President("杨一",4);
         Leader leader6 = new LeaveRule("学校请假规则",5);
 
-        List<Leader> list = new ArrayList<Leader>();
+        List<Leader> list = new ArrayList();
         list.add(leader5);
         list.add(leader6);
         list.add(leader3);
@@ -28,7 +29,10 @@ public class Client {
         list.add(leader1);
         list.add(leader2);
 
-        Collections.sort(list);
+        Comparator<Leader> comparator = Leader::compareTo;
+
+        //Collections.sort(list);
+        Collections.sort(list,comparator);
 
         for(Leader leader : list){
             if(leader.support(node)){
