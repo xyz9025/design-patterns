@@ -15,6 +15,9 @@ public class Client {
 
         Beverage milk = new Milk(beverage);
         System.out.println(milk.getDescription() + " $" + milk.cost());
+
+        Beverage mocha = new Mocha(milk);
+        System.out.println(mocha.getDescription() + " $" + mocha.cost());
     }
 
 }
