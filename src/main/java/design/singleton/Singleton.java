@@ -1,6 +1,7 @@
 package design.singleton;
 
 /**
+ * 饿汉模式
  * @author yangran
  * @create 2019/1/9
  */
