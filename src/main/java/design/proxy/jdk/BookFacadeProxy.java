@@ -21,6 +21,14 @@ public class BookFacadeProxy implements InvocationHandler {
                 target.getClass().getInterfaces(), this);
     }
 
+    /**
+     *
+     * @param proxy   代理类
+     * @param method  被代理方法
+     * @param args    方法的参数数组
+     * @return
+     * @throws Throwable
+     */
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("预处理操作——————");
         //调用真正的业务方法
